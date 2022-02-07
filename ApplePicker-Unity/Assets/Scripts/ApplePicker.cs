@@ -15,4 +15,13 @@ public class ApplePicker : MonoBehaviour
     {
         
     }
+
+    public void AppleDestroyed()
+    {
+        GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
+        foreach(GameObject tGo in tAppleArray)
+        {
+            Destroy(tGo);
+        }
+    }
 }

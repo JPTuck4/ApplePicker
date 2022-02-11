@@ -3,7 +3,7 @@
  * Date Created: Jan 31, 2022
  * 
  * Last Edited by: NA
- * Last Edited: Jan 31, 2022
+ * Last Edited: Feb 10, 2022
  * 
  * Description: Controls the movement of the Apple Tree
  */
@@ -17,15 +17,24 @@ public class AppleTree : MonoBehaviour
     [Header("SET IN INSPECTOR")]
     public float speed = 1f; //tree speed
     public float leftAndRightEdge = 10f; //distance where tree turns
-    public GameObject applePreFab; //prefab for instantiating apples
+    public GameObject applePrefab; //prefab for instantiating apples
     public float appleRate = 1f; // time in seconds between apples
     public float chanceToChangeDirections = 0.1f; //chance the tree changes direction
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Dropping apples every second
+        Invoke("DropApple", 2f);
     }
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject>(applePrefab); // instantiates prefab
+        apple.transform.position = transform.position; // sets position to tree position
+        Invoke("DropApple", appleRate); // calls dropApple again 1 second later
+    }
+
 
     // Update is called once per frame
     void Update()

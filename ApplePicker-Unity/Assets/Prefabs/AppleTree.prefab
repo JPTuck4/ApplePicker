@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160a86775d3fbf341b5d3c6f25adfcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   leftAndRightEdge: 10
   applePreFab: {fileID: 0}
   appleRate: 1
-  chanceToChangeDirections: 0.1
+  chanceToChangeDirections: 0
 --- !u!1 &6408512139207508494
 GameObject:
   m_ObjectHideFlags: 0
